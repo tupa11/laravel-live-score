@@ -14,7 +14,7 @@ services:
     depends_on:
       - db
     command: >
-      sh -c "chmod +x /var/www/html/docker/wait-for-it.sh && /var/www/html/docker/wait-for-it.sh db:3306 -- php artisan migrate --force && php artisan db:seed --force && php-fpm"
+      sh -c "chmod +x /var/www/html/docker/wait-for-it.sh && /var/www/html/docker/wait-for-it.sh db:3306 -- php artisan migrate:fresh --seed && php-fpm"
 
   nginx:
     image: nginx:latest

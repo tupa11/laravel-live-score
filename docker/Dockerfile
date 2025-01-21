@@ -17,6 +17,4 @@ WORKDIR /var/www/html
 
 COPY ./../ /var/www/html/
 
-RUN chmod +x /var/www/html/docker/wait-for-it.sh
-
-RUN composer install --no-dev --optimize-autoloader
+RUN chown -R www-data:www-data /var/www/html && chmod +x /var/www/html/docker/wait-for-it.sh
