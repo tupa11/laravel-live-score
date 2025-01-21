@@ -27,16 +27,11 @@
 
 3. Build and start the Docker containers:
     ```sh
-    docker-compose up --build
+    docker-compose build
+    docker-compose up -d
     ```
 
-4. Run the database migrations and seeders:
-    ```sh
-    docker-compose exec app php artisan migrate --force
-    docker-compose exec app php artisan db:seed --force
-    ```
-
-5. Access the application in your web browser:
+4. Waiting run Docker complete and Access the application in your web browser:
     ```
     http://localhost:8080
     ```
